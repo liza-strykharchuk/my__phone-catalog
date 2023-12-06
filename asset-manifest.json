@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.9b27a291.css",
-    "main.js": "./static/js/main.f422331a.js",
+    "main.css": "./static/css/main.61960657.css",
+    "main.js": "./static/js/main.17527556.js",
     "static/media/tablet_category.6336ca9e.png": "./static/media/tablet_category.6336ca9e.6336ca9e4d7fd24e1f11.png",
     "static/media/phone_category.6ddd2c76.png": "./static/media/phone_category.6ddd2c76.6ddd2c769f00de54a76e.png",
     "static/media/banner-phones.png": "./static/media/banner-phones.b4eeda8bd82b712057a2.png",
@@ -29,11 +29,11 @@
     "static/media/chevron-arrow-up-hover.svg": "./static/media/chevron-arrow-up-hover.e43f1786a2b6007f14e6fe8c79f73f83.svg",
     "static/media/minus-disabled.svg": "./static/media/minus-disabled.cce4862297a181fdf808.svg",
     "static/media/menu.svg": "./static/media/menu.cd178fe4cd980ab5ce8e.svg",
-    "main.9b27a291.css.map": "./static/css/main.9b27a291.css.map",
-    "main.f422331a.js.map": "./static/js/main.f422331a.js.map"
+    "main.61960657.css.map": "./static/css/main.61960657.css.map",
+    "main.17527556.js.map": "./static/js/main.17527556.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b27a291.css",
-    "static/js/main.f422331a.js"
+    "static/css/main.61960657.css",
+    "static/js/main.17527556.js"
   ]
 }
