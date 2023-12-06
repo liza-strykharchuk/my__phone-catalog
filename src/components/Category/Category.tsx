@@ -15,13 +15,6 @@ export const Category: React.FC<Props> = ({ product }) => {
     return arr.filter(pr => pr.category === category).length;
   };
 
-  // eslint-disable-next-line
-    const phoneBaner: string = require("../../categoryImg/phone_category.6ddd2c76.png").default;
-  // eslint-disable-next-line
-     const tabletsBaner: string = require("../../categoryImg/tablet_category.6336ca9e.png").default;
-  // eslint-disable-next-line
-    const accessoriesBaner: string = require("../../categoryImg/accessories_category.05d41563.png").default;
-
   return (
     <div className="category">
 
@@ -31,11 +24,7 @@ export const Category: React.FC<Props> = ({ product }) => {
 
       <div className="category__container">
         <Link to="/phones" className="category__phone">
-          <img
-            className="category__phone--img category__img"
-            alt="phone"
-            src={phoneBaner}
-          />
+          <div className="category__img--phone category__img" />
           <div className="category__title">
             Mobile phones
           </div>
@@ -47,11 +36,7 @@ export const Category: React.FC<Props> = ({ product }) => {
         </Link>
 
         <Link to="/tablets" className="category__tablets">
-          <img
-            className="category__tablets--img category__img"
-            alt="tablets"
-            src={tabletsBaner}
-          />
+          <div className="category__img--tablets category__img" />
           <div className="category__title">
             Tablets
           </div>
@@ -63,11 +48,7 @@ export const Category: React.FC<Props> = ({ product }) => {
         </Link>
 
         <Link to="/accessories" className="category__accessories">
-          <img
-            className="category__accessories--img category__img"
-            alt="accessories"
-            src={accessoriesBaner}
-          />
+          <div className="category__img--accessories category__img" />
           <div className="category__title">
             Accessories
           </div>

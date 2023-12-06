@@ -60,5 +60,17 @@
     &:hover {
       transform: scale(1.1);
     }
+
+    &--accessories {
+      background-image: url("../../categoryImg/accessories_category.05d41563.png");
+    }
+
+    &--tablets {
+      background-image: url("../../categoryImg/tablet_category.6336ca9e.png");
+    }
+
+    &--phone {
+      background-image: url("../../categoryImg/phone_category.6ddd2c76.png");
+    }
   }
 }
