@@ -4,7 +4,7 @@ import './HeaderMenu.scss';
 
 export const HeaderMenu = () => {
   return (
-    <nav className="menu__nav" >
+    <nav className="menu__nav">
       <ul className="menu__nav--list">
         <li className="nav__item">
           <NavLink to="/" className={isActiveTab}>
