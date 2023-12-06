@@ -41,7 +41,9 @@ export const HeaderOnPage: React.FC<Props> = ({ likeProduct, addProduct }) => {
 
   const handleIconClick = () => {
     if (pathname === '/addPage' || pathname === '/favourites') {
-      navigate('/menu', { replace: true });
+      navigate('https://liza-strykharchuk.github.io/my__phone-catalog/menu', {
+        replace: true,
+      });
     } else {
       window.history.back();
     }
