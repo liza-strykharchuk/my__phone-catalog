@@ -40,10 +40,11 @@ export const HeaderOnPage: React.FC<Props> = ({ likeProduct, addProduct }) => {
   }, []);
 
   const handleIconClick = () => {
-    if (pathname === '/addPage' || pathname === '/favourites') {
-      navigate('https://liza-strykharchuk.github.io/my__phone-catalog/menu', {
-        replace: true,
-      });
+    if (pathname === '/addPage'
+        || pathname === '/favourites'
+        || 'https://liza-strykharchuk.github.io/my__phone-catalog/'
+    ) {
+      navigate('/menu');
     } else {
       window.history.back();
     }
