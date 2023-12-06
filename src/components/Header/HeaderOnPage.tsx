@@ -42,7 +42,7 @@ export const HeaderOnPage: React.FC<Props> = ({ likeProduct, addProduct }) => {
   const handleIconClick = () => {
     if (pathname === '/addPage'
         || pathname === '/favourites'
-        || 'https://liza-strykharchuk.github.io/my__phone-catalog/'
+        || pathname === 'https://liza-strykharchuk.github.io/my__phone-catalog/'
     ) {
       navigate('/menu');
     } else {
