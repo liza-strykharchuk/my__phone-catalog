@@ -1,0 +1,10 @@
+.menu__nav {
+  max-height: 100%;
+
+  &--list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

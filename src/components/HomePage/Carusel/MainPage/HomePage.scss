@@ -1,0 +1,13 @@
+@import "../../../../helpers/variables.scss";
+
+.home {
+  padding: $pagePadding;
+
+  @include onDesktop {
+   padding: 32px 24px;
+  }
+
+  @include onPhone {
+    padding: 24px 0px;
+  }
+}
