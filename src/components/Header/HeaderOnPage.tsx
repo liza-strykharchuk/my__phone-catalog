@@ -41,7 +41,7 @@ export const HeaderOnPage: React.FC<Props> = ({ likeProduct, addProduct }) => {
 
   const handleIconClick = () => {
     if (pathname === '/addPage' || pathname === '/favourites') {
-      navigate('/menu');
+      navigate('/menu', { replace: true });
     } else {
       window.history.back();
     }
