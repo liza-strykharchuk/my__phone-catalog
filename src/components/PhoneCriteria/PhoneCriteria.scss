@@ -37,6 +37,11 @@
     display: flex;
     flex-direction: column;
 
+    @include onPhone {
+      flex-direction: row;
+     justify-content: center;
+    }
+
     & :last-child {
       margin-bottom: 0;
     }
@@ -45,6 +50,10 @@
   &__containerImg {
     display: flex;
     flex-direction: row;
+
+    @include onPhone {
+      flex-direction: column;
+    }
   }
 
   &__mini {

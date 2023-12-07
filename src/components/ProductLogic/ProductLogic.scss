@@ -50,6 +50,10 @@
     &--container {
       display: flex;
       margin-top: 40px;
+
+    @include onPhone {
+      flex-direction: column;
+    }
     }
 
     &--name {
@@ -69,6 +73,10 @@
     position: relative;
 
     cursor: pointer;
+
+    @include onPhone {
+      margin-bottom: 20px;
+    }
   }
 
   &__items {
