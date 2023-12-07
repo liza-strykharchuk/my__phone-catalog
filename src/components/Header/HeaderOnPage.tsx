@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import './HeaderStyles.scss';
 import { Search } from '../Search/Search';
 
 import { isActiveTab, isActiveAdd, isActiveLike } from '../../helpers/utils';
+import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
 
 type Props = {
   likeProduct: Product[],
@@ -15,6 +16,7 @@ type Props = {
 
 export const HeaderOnPage: React.FC<Props> = ({ likeProduct, addProduct }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1024);
+  const [isOpen, setIsOpen] = useState(false);
 
   const { pathname } = useLocation();
 
@@ -39,80 +41,85 @@ export const HeaderOnPage: React.FC<Props> = ({ likeProduct, addProduct }) => {
     };
   }, []);
 
-  const handleIconClick = () => {
-    if (pathname === '/addPage'
-        || pathname === '/favourites'
-        || pathname === 'https://liza-strykharchuk.github.io/my__phone-catalog/'
-    ) {
-      navigate('/menu');
-    } else {
-      window.history.back();
-    }
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
   };
 
+  const mainBody = document.body;
+
+  mainBody.style.overflow = isOpen ? 'hidden' : 'auto';
+
   return (
-    <header className="header">
-      <div className="container">
-        <NavLink
-          to="/"
-          className="header__img"
-        />
-
-        {!isSmallScreen && (
-          <nav className="nav">
-            <ul className="nav__list">
-              <li className="nav__item">
-                <NavLink to="/" className={isActiveTab}>
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink to="/phones" className={isActiveTab}>
-                  Phones
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink to="/tablets" className={isActiveTab}>
-                  Tablets
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink to="/accessories" className={isActiveTab}>
-                  Accessories
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-        )}
-      </div>
-
-      <div className="header__buttons">
-        {showSearch ? <Search /> : null}
-
-        {isSmallScreen && (
+    <>
+      <header className="header">
+        <div className="container">
           <NavLink
-            to="menu"
-            onClick={handleIconClick}
-            className="header__chose nav__burger"
+            to="/"
+            className="header__img"
           />
-        )}
 
-        <NavLink to="favourites" className={isActiveLike}>
-          {likeProduct.length !== 0 && (
-            <div className="header__amount">
-              {likeProduct.length}
-            </div>
+          {!isSmallScreen && (
+            <nav className="nav">
+              <ul className="nav__list">
+                <li className="nav__item">
+                  <NavLink to="/" className={isActiveTab}>
+                    Home
+                  </NavLink>
+                </li>
+                <li className="nav__item">
+                  <NavLink to="/phones" className={isActiveTab}>
+                    Phones
+                  </NavLink>
+                </li>
+                <li className="nav__item">
+                  <NavLink to="/tablets" className={isActiveTab}>
+                    Tablets
+                  </NavLink>
+                </li>
+                <li className="nav__item">
+                  <NavLink to="/accessories" className={isActiveTab}>
+                    Accessories
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
           )}
-        </NavLink>
+        </div>
 
-        <NavLink to="addPage" className={isActiveAdd}>
-          {addProduct.length !== 0 && (
-            <div className="header__amount">
-              {addProduct.length}
-            </div>
-          )}
-        </NavLink>
-      </div>
-    </header>
+        <div className="header__buttons">
+          {showSearch && !isOpen ? <Search /> : null}
+
+          {isSmallScreen ? (
+          //  eslint-disable-next-line
+            <button
+              type="button"
+              onClick={() => handleMenuToggle()}
+              className="header__chose nav__burger"
+            />
+          )
+            : (
+              <>
+                <NavLink to="favourites" className={isActiveLike}>
+                  {likeProduct.length !== 0 && (
+                    <div className="header__amount">
+                      {likeProduct.length}
+                    </div>
+                  )}
+                </NavLink>
+
+                <NavLink to="addPage" className={isActiveAdd}>
+                  {addProduct.length !== 0 && (
+                    <div className="header__amount">
+                      {addProduct.length}
+                    </div>
+                  )}
+                </NavLink>
+              </>
+            )}
+        </div>
+      </header>
+
+      <HeaderMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
   );
 };

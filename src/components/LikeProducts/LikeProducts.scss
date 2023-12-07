@@ -6,7 +6,7 @@
 
   @include onDesktop {
     padding: 32px 24px;
-   }
+  }
 
   &__header {
     color: $grayColor;
@@ -30,7 +30,6 @@
 
     @include onDesktop {
       justify-content: center;
-      flex-wrap: nowrap;
      }
 
      @include onPhone {
