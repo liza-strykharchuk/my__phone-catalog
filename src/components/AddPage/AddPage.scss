@@ -42,6 +42,7 @@
     border: none;
     background-color: $whiteColor;
     margin-right: 16px;
+    background-repeat: no-repeat;
   }
 
   &__img {
@@ -60,6 +61,7 @@
     font-size: 14px;
     line-height: 21px;
     color: $grayColor;
+    width: 336px;
 
     @include onPhone {
       width: 128px;
